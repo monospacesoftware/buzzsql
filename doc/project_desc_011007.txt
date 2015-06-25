@@ -1,0 +1,26 @@
+BuzzSQL is a thin layer over Java JDBC that manages automatic configuration of 
+database connection setup, pooling, configuration, logging, and statement 
+handling.  It achieves a middle ground between using straight JDBC connections 
+for database access, and more complex object-relational mapping libraries such 
+as Hibernate, Torque, or Cayenne.  
+
+BuzzSQL is super easy to setup, in some cases requiring no extra configuration 
+files at all.  This is achieved by an intelligent database connection 
+auto-discovery search process.  
+
+The object structure is clean and straight forward, making the library quick 
+to learn and use by novice Java developers.  The objects are named according to 
+standard SQL statement names; Select for Select, Insert for Insert, Update for 
+Update, etc.
+
+The library does not generate Java code, map relational tables to objects, or 
+write SQL for the user.  Users must know SQL.  BuzzSQL uses Java 5 enhancements 
+such as Autoboxing and Vargs to make creating and calling SQL statement object 
+constructors simple and straight forward.
+
+This library has evolved over the last few years through work I have done at 2 
+different companies and personal time spent at home.  An earlier form of it is 
+in production use by my current employer, handling thousands of SQL statements 
+per minute.  As a result the code is relatively mature, but not tested on more 
+than 1 or 2 different databases.  I talked to my employer and they have already 
+approved its release to the public as an open-source project on SourceForge.  

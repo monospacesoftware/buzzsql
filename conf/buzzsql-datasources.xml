@@ -1,0 +1,18 @@
+<initial-context>
+ <context name="java:comp">
+  <context name="env">
+   <context name="jdbc">
+    <reference name="example" className="javax.sql.DataSource" factoryClassName="org.shiftone.ooc.factory.PooledDataSourceObjectFactory">
+     <refAddr name="driver"                     value="com.mysql.jdbc.Driver"/>
+     <refAddr name="url"                        value="jdbc:mysql://localhost:3306/example1"/>
+     <refAddr name="user"                       value="root"/>
+     <refAddr name="password"                   value="mysql1"/>
+     <refAddr name="c3p0.initialPoolSize"       value="1"/>
+     <refAddr name="c3p0.minPoolSize"           value="1"/>
+     <refAddr name="c3p0.acquireIncrement"      value="1"/>
+     <refAddr name="c3p0.acquireRetryAttempts"  value="1"/>
+    </reference>
+   </context>
+  </context>
+ </context>
+</initial-context>

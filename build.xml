@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="buzzsql" default="build" basedir=".">
+
+	<path id="project.class.path">
+		<pathelement path="${java.class.path}/" />
+		<fileset dir="./lib">
+			<include name="**/*.jar" />
+		</fileset>
+		<pathelement path="./conf" />
+		<pathelement path="./src" />
+	</path>
+
+	<target name="compile">
+		<delete>
+			<fileset dir="./build" includes="**/*.class" />
+		</delete>
+		<javac srcdir="./src" destdir="./build" includes="com/buzzsurf/sql/*.java" failonerror="true" debug="on" target="1.5">
+			<classpath refid="project.class.path" />
+		</javac>
+		<echo message="Compiling complete." />
+	</target>
+
+	<target name="javadoc" depends="compile">
+		<javadoc 
+			access="protected" 
+			author="true" 
+			classpathref="project.class.path" 
+			destdir="doc/javadoc" 
+			doctitle="BuzzSQL JavaDoc" 
+			nodeprecated="false" 
+			nodeprecatedlist="false" 
+			noindex="false" 
+			nonavbar="false" 
+			notree="false" 
+			source="1.5" 
+			sourcepath="./src" 
+			sourcefiles="src/com/buzzsurf/sql/ReleaseInfo.java,src/com/buzzsurf/sql/Update.java,src/com/buzzsurf/sql/DataSourceManager.java,src/com/buzzsurf/sql/Insert.java,src/com/buzzsurf/sql/Select.java,src/com/buzzsurf/sql/Delete.java,src/com/buzzsurf/sql/OutParameter.java,src/com/buzzsurf/sql/StoredProcedure.java,src/com/buzzsurf/sql/BuzzSQL.java,src/com/buzzsurf/sql/InOutParameter.java" 
+			splitindex="false" 
+			use="true" 
+			version="true"
+			stylesheetfile="doc/stylesheet.css"
+		/>
+	</target>
+
+	<target name="build" depends="javadoc">
+		<delete file="build/buzzsql.jar" />
+		<jar jarfile="build/buzzsql.jar" update="false">
+			<fileset dir="./build">
+				<include name="**/*.class" />
+			</fileset>
+		</jar>
+		<echo message="Build Complete." />
+		<delete includeEmptyDirs="true">
+			<fileset dir="build/com"/>
+		</delete>
+	</target>
+
+</project>

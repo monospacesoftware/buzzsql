@@ -1,0 +1,254 @@
+/* Javadoc style sheet */
+
+/* Define colors, fonts and other style attributes here to override the defaults */
+
+/* Page background color */
+body { 
+	background-color: #FFFFFF; 
+	color:#000000 
+	color: black;
+	text-align: left;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	margin: 2px;
+}
+
+/* Headings */
+h1 { 
+	font-size: 145%; 
+}
+
+h2 { 
+	font-size: 115%;
+	text-decoration : underline;
+}
+
+/* Table colors */
+.TableHeadingColor     { background: #CCCCFF; color:#000000 } /* Dark mauve */
+.TableSubHeadingColor  { background: #EEEEFF; color:#000000 } /* Light mauve */
+.TableRowColor         { background: #FFFFFF; color:#000000 } /* White */
+
+/* Font used in left-hand frame lists */
+.FrameTitleFont   { font-size: 100%; font-family: Helvetica, Arial, sans-serif; color:#000000 }
+.FrameHeadingFont { font-size:  90%; font-family: Helvetica, Arial, sans-serif; color:#000000 }
+.FrameItemFont    { font-size:  90%; font-family: Helvetica, Arial, sans-serif; color:#000000 }
+
+/* Navigation bar fonts and colors */
+.NavBarCell1    { background-color:#EEEEFF; color:#000000} /* Light mauve */
+.NavBarCell1Rev { background-color:#00008B; color:#FFFFFF} /* Dark Blue */
+.NavBarFont1    { font-family: Arial, Helvetica, sans-serif; color:#000000;color:#000000;}
+.NavBarFont1Rev { font-family: Arial, Helvetica, sans-serif; color:#FFFFFF;color:#FFFFFF;}
+
+.NavBarCell2    { font-family: Arial, Helvetica, sans-serif; background-color:#FFFFFF; color:#000000}
+.NavBarCell3    { font-family: Arial, Helvetica, sans-serif; background-color:#FFFFFF; color:#000000}
+
+a {
+	text-decoration : none;
+	color: #0000FF;
+}
+
+a:hover {
+	text-decoration : underline;
+	color: #0000FF;
+}
+
+table.invisible {
+	border-width: 0px;
+	border-spacing: 0px;
+	border-style: none;
+	background-color: white;
+}
+
+table.invisible td {
+	border-width: 0px;
+	padding: 0px 0px 5px 0px
+	border-style: none;
+	background-color: white;
+	color: black;
+	-moz-border-radius: ;
+	text-align: left;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	line-height: 16px;
+}
+
+table.main {
+	border-width: 0px;
+	border-spacing: 0px;
+	border-style: solid;
+	border-color: #CEDFFF;
+	border-collapse: collapse;
+	background-color: white;
+}
+
+table.main th {
+	border-width: 0px;
+	padding: 2px;
+	border-style: none;
+	background-color: #CEDFFF;
+	color: black;
+	-moz-border-radius: ;
+	text-align: center;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: bold;
+	line-height: 16px;
+}
+
+table.main td {
+	border-width: 0px;
+	padding: 5px 0px 5px 0px
+	border-style: none;
+	background-color: white;
+	color: black;
+	-moz-border-radius: ;
+	text-align: left;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	line-height: 16px;
+}
+
+table.contents {
+	border-width: 0px;
+	border-style: none;
+	border-color: #CEDFFF;
+	border-collapse: collapse;
+	padding: 2px;
+	background-color: white;
+}
+
+table.contents th {
+	border-width: 1px 1px 1px 0px;
+	padding: 2px 5px 2px 2px;
+	border-style: solid;
+	border-collapse: collapse;
+	border-color: #CEDFFF;
+	background-color: white;
+	color: black;
+	-moz-border-radius: ;
+	text-align: right;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	line-height: 12px;
+}
+
+table.contents td {
+	border-width: 1px 0px 1px 0px;
+	padding: 2px 2px 2px 5px;
+	border-style: solid;
+	border-collapse: collapse;
+	border-color: #CEDFFF;
+	background-color: white;
+	color: black;
+	-moz-border-radius: ;
+	text-align: left;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	line-height: 12px;
+}
+
+table.footer {
+	border-width: 1px 0px 0px 0px;
+	border-spacing: 0px;
+	border-style: solid;
+	border-color: #CEDFFF;
+	border-collapse: collapse;
+	background-color: white;
+}
+
+table.footer th {
+	border-width: 0px;
+	padding: 2px;
+	border-style: none;
+	background-color: #CEDFFF;
+	color: black;
+	-moz-border-radius: ;
+	text-align: center;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: bold;
+	line-height: 16px;
+}
+
+table.footer td {
+	border-width: 0px;
+	padding: 5px 0px 5px 0px
+	border-style: none;
+	background-color: white;
+	color: black;
+	-moz-border-radius: ;
+	text-align: center;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	line-height: 16px;
+}
+
+pre {
+	border-width: 0px;
+	padding: 5px;
+	border-style: none;
+	background-color: #FFEFCE;
+	text-align: left;
+	font-family: monospace;
+	font-size: 12px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	line-height: 16px;
+	color: #000000;
+}
+
+.code {
+	text-align: left;
+	font-family: monospace;
+	font-size: 12px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	line-height: 16px;
+	color: #000000;
+}
+
+.italic {
+	font-style: italic;
+}
+
+.emph {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: bold;
+	line-height: 16px;
+}
+
+.title {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: bold;
+	line-height: 24px;
+}

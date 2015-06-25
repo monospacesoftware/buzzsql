@@ -1,0 +1,2108 @@
+<!doctype HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<head>
+ <title>BuzzSQL - User's Guide</title>
+<style type="text/css">
+
+a {
+	text-decoration : none;
+	color: #0000FF;
+}
+
+a:hover {
+	text-decoration : underline;
+	color: #0000FF;
+}
+
+table.invisible {
+	border-width: 0px;
+	border-spacing: 0px;
+	border-style: none;
+	background-color: white;
+}
+
+table.invisible td {
+	border-width: 0px;
+	padding: 0px 0px 5px 0px
+	border-style: none;
+	background-color: white;
+	color: black;
+	-moz-border-radius: ;
+	text-align: left;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	line-height: 16px;
+}
+
+table.main {
+	border-width: 0px;
+	border-spacing: 0px;
+	border-style: solid;
+	border-color: #CEDFFF;
+	border-collapse: collapse;
+	background-color: white;
+}
+
+table.main th {
+	border-width: 0px;
+	padding: 2px;
+	border-style: none;
+	background-color: #CEDFFF;
+	color: black;
+	-moz-border-radius: ;
+	text-align: left;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: bold;
+	line-height: 16px;
+
+}
+
+table.main td {
+	border-width: 0px;
+	padding: 5px 0px 5px 0px
+	border-style: none;
+	background-color: white;
+	color: black;
+	-moz-border-radius: ;
+	text-align: left;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	line-height: 16px;
+}
+
+table.contents {
+	border-width: 0px;
+	border-style: none;
+	border-color: #CEDFFF;
+	border-collapse: collapse;
+	padding: 2px;
+	background-color: white;
+}
+
+table.contents th {
+	border-width: 1px 1px 1px 0px;
+	padding: 2px 5px 2px 2px;
+	border-style: solid;
+	border-collapse: collapse;
+	border-color: #CEDFFF;
+	background-color: white;
+	color: black;
+	-moz-border-radius: ;
+	text-align: right;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	line-height: 12px;
+}
+
+table.contents td {
+	border-width: 1px 0px 1px 0px;
+	padding: 2px 2px 2px 5px;
+	border-style: solid;
+	border-collapse: collapse;
+	border-color: #CEDFFF;
+	background-color: white;
+	color: black;
+	-moz-border-radius: ;
+	text-align: left;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	line-height: 12px;
+}
+
+pre {
+	border-width: 0px;
+	padding: 5px;
+	border-style: none;
+	background-color: #FFEFCE;
+	text-align: left;
+	font-family: monospace;
+	font-size: 12px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	line-height: 16px;
+	color: #000000;
+}
+
+code {
+	text-align: left;
+	font-family: monospace;
+	font-size: 12px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	line-height: 16px;
+	color: #000000;
+}
+
+.italic {
+	font-style: italic;
+}
+
+.emph {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: bold;
+	line-height: 16px;
+}
+
+.title {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: bold;
+	line-height: 24px;
+}
+
+</style>
+</head>
+
+<body>
+<div align="center">
+<center>
+
+<table width="750" class="main">
+ <tr>
+  <th>
+   <span class="title">&nbsp;BuzzSQL User's Guide</span>
+  </th>
+ </tr>
+ <tr>
+  <td>
+   <table width="100%" class="invisible">
+    <tr>
+     <td>
+      Version 1.3.8<br>
+      Last Updated: 11/04/2007<br>
+      Copyright &copy; 2007 Paul W Cowan. All rights reserved.<br>
+      <a href="http://www.buzzsurf.com/sql">http://www.buzzsurf.com/sql</a>
+     </td>
+    </tr>
+   </table>
+  </td>
+ </tr>
+ <tr>
+  <th>
+   &nbsp;Limitation of Liability
+  </th>
+ </tr>
+ <tr>
+  <td>
+   <span class="italic">
+   This publication and the software it describes are provided "as is" without warranty of any kind, express or implied,
+   including, but not limited to, the implied warranties of merchantability, fitness for a particular purpose, or
+   non-infringement.
+   </span>
+  </td>
+ </tr>
+ <tr>
+  <th>
+   &nbsp;Contents
+  </th>
+ </tr>
+ <tr>
+  <td>
+
+   <table class="contents" width="100%">
+    <tr>
+     <th>
+      1.
+     </th>
+     <td>
+      <a href="#Introduction">Introduction</a>
+     </td>
+    </tr>
+    <tr>
+     <th>
+      1.1
+     </th>
+     <td>
+      <a href="#What%20BuzzSQL%20Is">What BuzzSQL Is</a>
+     </td>
+    </tr>
+    <tr>
+     <th>
+      1.2
+     </th>
+     <td>
+      <a href="#What%20BuzzSQL%20Isn't">What BuzzSQL Isn't</a>
+     </td>
+    </tr>
+    <tr>
+     <th>
+      1.3
+     </th>
+     <td>
+      <a href="#Objectives">Objectives</a>
+     </td>
+    </tr>
+    <tr>
+     <th>
+      1.4
+     </th>
+     <td>
+      <a href="#Target%20Audience">Target Audience</a>
+     </td>
+    </tr>
+    <tr>
+     <th>
+      1.5
+     </th>
+     <td>
+      <a href="#Architecture">Architecture</a>
+     </td>
+    </tr>
+    <tr>
+     <th>
+      2.
+     </th>
+     <td>
+      <a href="#Compatibility">Compatibility</a>
+     </td>
+    </tr>
+    <tr>
+     <th>
+      2.1
+     </th>
+     <td>
+      <a href="#Java%20Version">Java Version</a>
+     </td>
+    </tr>
+    <tr>
+     <th>
+      2.2
+     </th>
+     <td>
+      <a href="#Operating%20Systems">Operating Systems</a>
+     </td>
+    </tr>
+    <tr>
+     <th>
+      2.3
+     </th>
+     <td>
+      <a href="#Databases">Databases</a>
+     </td>
+    </tr>
+    <tr>
+     <th>
+      3.
+     </th>
+     <td>
+      <a href="#Installation">Installation</a>
+     </td>
+    </tr>
+    <tr>
+     <th>
+      3.1
+     </th>
+     <td>
+      <a href="#Dependencies">Dependencies</a>
+     </td>
+    </tr>
+    <tr>
+     <th>
+      3.2
+     </th>
+     <td>
+      <a href="#Included%20JARs">Included JARs</a>
+     </td>
+    </tr>
+    <tr>
+     <th>
+      3.3
+     </th>
+     <td>
+      <a href="#Configuration%20Files">Configuration Files</a>
+     </td>
+    </tr>
+    <tr>
+     <th>
+      3.3.1
+     </th>
+     <td>
+      <a href="#BuzzSQL%20Properties">BuzzSQL Properties</a> (<code>buzzsql.properties</code>)
+     </td>
+    </tr>
+    <tr>
+     <th>
+      3.3.2
+     </th>
+     <td>
+      <a href="#Database%20Connection%20Configuration">Database Connection Configuration</a>
+      (<code>buzzsql-datasources.xml</code>)
+     </td>
+    </tr>
+    <tr>
+     <th>
+      3.4
+     </th>
+     <td>
+      <a href="#BuzzSQL%20Logging">BuzzSQL Logging</a>
+     </td>
+    </tr>
+    <tr>
+     <th>
+      3.4.1
+     </th>
+     <td>
+      <a href="#DEBUG%20Level">DEBUG Level</a>
+     </td>
+    </tr>
+    <tr>
+     <th>
+      3.4.2
+     </th>
+     <td>
+      <a href="#INFO%20Level">INFO Level</a>
+     </td>
+    </tr>
+    <tr>
+     <th>
+      3.4.3
+     </th>
+     <td>
+      <a href="#WARN%20Level">WARN Level</a>
+     </td>
+    </tr>
+    <tr>
+     <th>
+      3.4.4
+     </th>
+     <td>
+      <a href="#ERROR%20Level">ERROR Level</a>
+     </td>
+    </tr>
+    <tr>
+     <th>
+      3.4.5
+     </th>
+     <td>
+      <a href="#FATAL%20Level">FATAL Level</a>
+     </td>
+    </tr>
+    <tr>
+     <th>
+      3.5
+     </th>
+     <td>
+      <a href="#3rd%20Party%20Library%20Logging">3rd Party Library Logging</a>
+     </td>
+    </tr>
+    <tr>
+     <th>
+      4.
+     </th>
+     <td>
+      <a href="#Usage">Usage</a>
+     </td>
+    </tr>
+    <tr>
+     <th>
+      4.1
+     </th>
+     <td>
+      <a href="#Constructors">Constructors</a>
+     </td>
+    </tr>
+    <tr>
+     <th>
+      4.2
+     </th>
+     <td>
+      <a href="#SQL%20and%20Arguments">SQL and Arguments</a>
+     </td>
+    </tr>
+    <tr>
+     <th>
+      4.3
+     </th>
+     <td>
+      <a href="#Execution">Execution</a>
+     </td>
+    </tr>
+    <tr>
+     <th>
+      4.4
+     </th>
+     <td>
+      <a href="#Closing%20the%20Object">Closing the Object</a>
+     </td>
+    </tr>
+    <tr>
+     <th>
+      4.5
+     </th>
+     <td>
+      <a href="#SQL%20Objects">SQL Objects</a>
+     </td>
+    </tr>
+    <tr>
+     <th>
+      4.5.1
+     </th>
+     <td>
+      <a href="#Select">Select</a> (<code>com.buzzsurf.sql.Select</code>)
+     </td>
+    </tr>
+    <tr>
+     <th>
+      4.5.2
+     </th>
+     <td>
+      <a href="#Update">Update</a> (<code>com.buzzsurf.sql.Update</code>)
+     </td>
+    </tr>
+    <tr>
+     <th>
+      4.5.3
+     </th>
+     <td>
+      <a href="#Insert">Insert</a> (<code>com.buzzsurf.sql.Insert</code>)
+     </td>
+    </tr>
+    <tr>
+     <th>
+      4.5.4
+     </th>
+     <td>
+      <a href="#Delete">Delete</a> (<code>com.buzzsurf.sql.Delete</code>)
+     </td>
+    </tr>
+    <tr>
+     <th>
+      4.5.5
+     </th>
+     <td>
+      <a href="#Stored%20Procedure">Stored Procedure</a> (<code>com.buzzsurf.sql.StoredProcedure</code>)
+     </td>
+    </tr>
+    <tr>
+     <th>
+      4.5.5.1
+     </th>
+     <td>
+      <a href="#OutParameter">OutParameter</a> (<code>com.buzzsurf.sql.OutParameter</code>)
+     </td>
+    </tr>
+    <tr>
+     <th>
+      4.5.5.2
+     </th>
+     <td>
+      <a href="#InOutParameter">InOutParameter</a> (<code>com.buzzsurf.sql.InOutParameter</code>)
+     </td>
+    </tr>
+    <tr>
+     <th>
+      5.
+     </th>
+     <td>
+      <a href="#Connecting%20to%20the%20Database">Connecting to the Database</a>
+     </td>
+    </tr>
+    <tr>
+     <th>
+      5.1
+     </th>
+     <td>
+      <a href="#DataSource%20Manager">DataSource Manager</a> (<code>com.buzzsurf.sql.DataSourceManager</code>)
+     </td>
+    </tr>
+    <tr>
+     <th>
+      5.1.1
+     </th>
+     <td>
+      <a href="#Modes%20of%20Operation">Modes of Operation</a>
+     </td>
+    </tr>
+    <tr>
+     <th>
+      5.1.1.1
+     </th>
+     <td>
+      <a href="#J2EE%20-%20Application%20Server%20Mode">J2EE - Application Server Mode</a>
+     </td>
+    </tr>
+    <tr>
+     <th>
+      5.1.1.2
+     </th>
+     <td>
+      <a href="#J2SE%20-%20Stand-alone%20Mode">J2SE - Stand-alone Mode</a>
+     </td>
+    </tr>
+    <tr>
+     <th>
+      5.1.2
+     </th>
+     <td>
+      <a href="#Initialization">Initialization</a>
+     </td>
+    </tr>
+    <tr>
+     <th>
+      5.1.3
+     </th>
+     <td>
+      <a href="#DataSource%20Naming">DataSource Naming</a>
+     </td>
+    </tr>
+    <tr>
+     <th>
+      5.2
+     </th>
+     <td>
+      <a href="#Connection%20Pooling">Connection Pooling</a>
+     </td>
+    </tr>
+    <tr>
+     <th>
+      6.
+     </th>
+     <td>
+      <a href="#Miscellaneous%20Topics">Miscellaneous Topics</a>
+     </td>
+    </tr>
+    <tr>
+     <th>
+      6.1
+     </th>
+     <td>
+      <a href="#Explicit%20Connections">Explicit Connections</a>
+     </td>
+    </tr>
+    <tr>
+     <th>
+      6.2
+     </th>
+     <td>
+      <a href="#Transactions">Transactions</a>
+     </td>
+    </tr>
+    <tr>
+     <th>
+      6.3
+     </th>
+     <td>
+      <a href="#Method%20Chaining">Method Chaining</a>
+     </td>
+    </tr>
+    <tr>
+     <th>
+      6.4
+     </th>
+     <td>
+      <a href="#Thread%20Safety">Thread Safety</a>
+     </td>
+    </tr>
+    <tr>
+     <th>
+      6.5
+     </th>
+     <td>
+      <a href="#Release%20Information">Release Information</a> (<code>com.buzzsurf.sql.ReleaseInfo</code>)
+     </td>
+    </tr>
+    <tr>
+     <th>
+      7.
+     </th>
+     <td>
+      <a href="#JavaDoc%20-%20API%20Documentation">JavaDoc - API Documentation</a>
+     </td>
+    </tr>
+    <tr>
+     <th>
+      8.
+     </th>
+     <td>
+      <a href="#Contacting%20the%20Author">Contacting the Author</a>
+     </td>
+    </tr>
+    <tr>
+     <th>
+      9.
+     </th>
+     <td>
+      <a href="#License">License</a>
+     </td>
+    </tr>
+    <tr>
+     <th>
+      10.
+     </th>
+     <td>
+      <a href="#Change%20Log">Change Log</a>
+     </td>
+    </tr>
+   </table>
+
+  </td>
+ </tr>
+ <tr>
+  <th>
+   <a name="Introduction">&nbsp;</a> 1. Introduction
+  </th>
+ </tr>
+ <tr>
+  <td>
+   Welcome to the BuzzSQL User's Guide. This guide explains the basics about what BuzzSQL is, how to program with it, and
+   how to configure it. This guide assumes you are familiar Java development.
+  </td>
+ </tr>
+ <tr>
+  <th>
+   <a name="What%20BuzzSQL%20Is">&nbsp;</a> 1.1 What BuzzSQL Is
+  </th>
+ </tr>
+ <tr>
+  <td>
+   BuzzSQL is a simple to use Java API for accessing a relational database. It functions as a thin layer over Java JDBC by
+   providing straight forward wrapper classes for the more complex underlying JDBC calls. It further simplifies JDBC by
+   providing automatic setup of database connection pooling, configuration, logging, and statement handling.
+   <br>
+   <br>
+   BuzzSQL lends itself extremely well to smaller, non-enterprise level, stand-alone applications where only a few quick 
+   database queries or updates are needed.   
+  </td>
+ </tr>
+ <tr>
+  <th>
+   <a name="What%20BuzzSQL%20Isn't">&nbsp;</a> 1.2 What BuzzSQL Isn't
+  </th>
+ </tr>
+ <tr>
+  <td>
+   BuzzSQL is NOT an <a href="http://en.wikipedia.org/wiki/Object-relational_mapping">object-relational mapping</a>
+   library (ORM). It does not examine your database structure or generate
+   classes. BuzzSQL does not write SQL for you; you must understand SQL syntax and know how to write queries for your
+   target database platform.
+  </td>
+ </tr>
+ <tr>
+  <th>
+   <a name="Objectives">&nbsp;</a> 1.3 Objectives
+  </th>
+ </tr>
+ <tr>
+  <td>
+   The objective of BuzzSQL is to achieve a middle ground between using straight JDBC connections for database access, and
+   more complex object-relational mapping libraries such as <a href="http://www.hibernate.org/">Hibernate</a>, 
+   <a href="http://db.apache.org/torque/">Torque</a>, or <a href="http://cayenne.apache.org/">Cayenne</a>.
+   <br>
+   <br>
+   BuzzSQL was written to fill a need the author saw for a Java database access library that is less complex and
+   cumbersome than most ORM libraries, but simplifies JDBC statement handling and provides automatic connection pooling
+   and configuration using properties files. It is designed to work well in both J2EE application servers and stand-alone
+   J2SE applications.
+  </td>
+ </tr>
+ <tr>
+  <th>
+   <a name="Target%20Audience">&nbsp;</a> 1.4 Target Audience
+  </th>
+ </tr>
+ <tr>
+  <td>
+   The target audience is beginner to advanced level Java developers that are looking for a quick and efficient database
+   access layer without the overhead and headaches of an ORM tool. BuzzSQL probably isn't for you if you're looking for 
+   database reverse engineering, SQL script generation, strictly object-oriented data objects, high performance caching, 
+   or lots of XML configuration files.
+  </td>
+ </tr>
+ <tr>
+  <th>
+   <a name="Architecture">&nbsp;</a> 1.5 Architecture
+  </th>
+ </tr>
+ <tr>
+  <td>
+   The object structure of BuzzSQL is clean and straight forward, making the library easy to learn and use by novice Java
+   developers. Most objects are modeled according to standard SQL statement names; <a href="#Select">Select</a> for Select, 
+   <a href="#Insert">Insert</a> for Insert, <a href="#Update">Update</a> for Update, etc.
+   <br>
+   <br>
+   BuzzSQL is a thin layer on top of JDBC, and therefore provides access to all the underlying JDBC objects. You can use
+   as little or as much of it as you need. Connections to the database are always obtained through a JNDI naming context.
+   As a result, it integrates almost seamlessly with J2EE application servers. In fact, in most application server
+   environments no additional configuration files are needed. When a naming context is not available as is common in a
+   stand-alone J2SE application, BuzzSQL creates one automatically and loads it with DataSources according to your
+   configuration file.
+  </td>
+ </tr>
+ <tr>
+  <th>
+   <a name="Compatibility">&nbsp;</a> 2. Compatibility
+  </th>
+ </tr>
+ <tr>
+  <td>
+   &nbsp;
+  </td>
+ </tr>
+ <tr>
+  <th>
+   <a name="Java%20Version">&nbsp;</a> 2.1 Java Version
+  </th>
+ </tr>
+ <tr>
+  <td>
+   J2SE 5.0 or later is required. BuzzSQL does NOT function on Java 1.4 or earlier, as it depends on language enhancement
+   in Java 5 such as autoboxing, variable arguments, and generics.
+   <br>
+   <br>
+   BuzzSQL will work equally well using the Java JRE or JDK.
+   <br>
+   <br>
+   Note: Java 5.0 is the same as Java 1.5. JDK is the same as SDK. J2EE is NOT the same as J2SE; BuzzSQL does not require
+   J2EE.
+   <br>
+   <br>
+   BuzzSQL was developed using Eclipse, and as such it may be more convenient to use Eclipse while viewing the source
+   release, but Eclipse certainly isn't required.
+  </td>
+ </tr>
+ <tr>
+  <th>
+   <a name="Operating%20Systems">&nbsp;</a> 2.2 Operating Systems
+  </th>
+ </tr>
+ <tr>
+  <td>
+   BuzzSQL is a pure Java library and does not rely on any JNI native calls. It should function correctly on any operating
+   system that supports the Java 1.5 JRE or higher.
+  </td>
+ </tr>
+ <tr>
+  <th>
+   <a name="Databases">&nbsp;</a> 2.3 Databases
+  </th>
+ </tr>
+ <tr>
+  <td>
+   BuzzSQL was not written for any specific database system, although it has been extensively testing on 
+   <a href="http://www.mysql.org/">MySQL</a> and <a href="http://www.oracle.com/index.html">Oracle</a>.
+   It functions through JDBC, and does not rely on any unusual calls or direct database access. Therefore it should be
+   compatible with any database that has a reliable JDBC driver.
+   <br>
+   <br>
+   Since BuzzSQL does not write SQL for you, it does not need to be told what type of database you are using. All inherent
+   differences between various RDBMS systems are taken care of by the JDBC driver and your own SQL statements. However, it
+   is sometimes useful to know what type of database you are accessing. This can be accomplished by querying 
+   <code>java.sql.DatabaseMetaData</code> as shown in the following code fragment.
+   <br>
+<pre>
+Connection tempConn = DataSourceManager.getConnection();
+String databaseType = tempConn.getMetaData().getDatabaseProductName();
+DataSourceManager.releaseConnection(tempConn);
+</pre>
+  </td>
+ </tr>
+ <tr>
+  <th>
+   <a name="Installation">&nbsp;</a> 3. Installation
+  </th>
+ </tr>
+ <tr>
+  <td>
+   Installation of BuzzSQL is as simple as dropping the appropriate JAR files and optional configuration files in your
+   classpath or the appropriate <code>WEB-INF</code> directory. However, which 3rd party libraries you need
+   depends on your particular setup. These details are explained in the following sections.
+  </td>
+ </tr>
+ <tr>
+  <th>
+   <a name="Dependencies">&nbsp;</a> 3.1 Dependencies
+  </th>
+ </tr>
+ <tr>
+  <td>
+   BuzzSQL's dependency on 3rd party libraries varies depending on your environment; i.e stand-alone or an application
+   server. It also depends on what database connection pool you prefer to use.
+   <br>
+   <br>
+   In a common J2SE stand-alone application using the default connection pool, BuzzSQL requires the following libraries;
+   <br>
+   <ul>
+    <li>
+     Jakarta commons-logging (requires...)
+     <ul>
+      <li>	
+       Log4j (If using Log4j for logging)
+      </li>
+     </ul>
+    </li>
+    <li>
+     Shiftone OOC JNDI Context (requires...)
+     <ul>
+      <li>
+       Shiftone Arbor XML Unmarshaller
+      </li>
+      <li>
+       c3p0 database connection pool
+      </li>
+     </ul>
+    </li>
+   </ul>
+   <span class="emph">In a J2EE application server environment, with an existing JNDI naming context, the only requirement
+   is the Jakarta commons-logging library.</span>
+   <br>
+   <br>
+   Websites for downloading dependencies;
+   <br>
+   <ul>
+    <li>
+     Jakarta commons-logging -
+     <a href="http://jakarta.apache.org/commons/logging/">http://jakarta.apache.org/commons/logging/</a>
+    </li>
+    <li>
+     Shiftone OOC - <a href="http://oocjndi.sourceforge.net/">http://oocjndi.sourceforge.net/</a>
+    </li>
+    <li>
+     Log4J - <a href="http://logging.apache.org/log4j">http://logging.apache.org/log4j</a>
+    </li>
+    <li>
+     Shiftone Arbor - <a href="http://xarbor.sourceforge.net/">http://xarbor.sourceforge.net/</a>
+    </li>
+    <li>
+     c3p0 - <a href="http://sourceforge.net/projects/c3p0">http://sourceforge.net/projects/c3p0</a>
+    </li>
+   </ul>
+   BuzzSQL was tested with the following versions of these libraries, although earlier versions may work equally well;
+   <br>
+   <ul>
+    <li>
+     commons-logging 1.1 - Required by BuzzSQL
+    </li>
+    <li>
+     Log4j 1.2.14 - Required if using Log4J for logging
+    </li>
+    <li>
+     Shiftone OOC 1.2 - Required if no JNDI naming context (J2SE environment)
+    </li>
+    <li>
+     Shiftone Arbor 1.4 - Required by Shiftone OOC
+    </li>
+    <li>
+     c3p0 0.9.1.2 - Required by Shiftone OOC if using c3p0 as the database connection pool
+    </li>
+    <li>
+     MySQL Connector/J 5.0.6 - Required by c3p0 if using MySQL
+    </li>
+    <li>
+     Oracle Thin Driver ojdbc14 - Required by c3p0 if using Oracle
+    </li>
+   </ul>
+  </td>
+ </tr>
+ <tr>
+  <th>
+   <a name="Included%20JARs">&nbsp;</a> 3.2 Included JARs
+  </th>
+ </tr>
+ <tr>
+  <td>
+   BuzzSQL comes packaged with all the required 3rd party libraries mentioned above.In a stand-alone J2SE environment you
+   will likely need to include all the provided jars in the classpath. In a J2EE application server environment, most
+   likely only the buzzsql jar will be needed.
+   <br>
+   <ul>
+    <li>
+     <code>buzzsql-&lt;version&gt;.jar</code> - The BuzzSQL classes
+    </li>
+    <li>
+     <code>commons-logging-1.1.jar</code> - Jakarta commons-logging: Wrapper around a variety of logging APIs.
+     Required by BuzzSQL and other libraries.
+    </li>
+    <li>
+     <code>log4j-1.2.14.jar</code> - Log4j: Elegant logging system. Required by commons-logging if you are
+     using Log4j as your logging system.
+    </li>
+    <li>
+     <code>shiftone-oocjndi.jar</code> - Shiftone OOC: An in-memory JNDI service provider. Required by BuzzSQL
+     if no JNDI naming context already exists, such as in a stand-alone J2SE application.
+    </li>
+    <li>
+     <code>shiftone-arbor.jar</code> - Shiftone Arbor XML Unmarshaller: A library for reading XML files.
+     Required by Shiftone OOC to load the XML resource configuration.
+    </li>
+    <li>
+     <code>c3p0-0.9.1.2.jar</code> - c3p0: JDBC connection and statement pooling. Required by Shiftone OOC for
+     database connection pooling if you are using c3p0 as your pool.
+    </li>
+   </ul>
+  </td>
+ </tr>
+ <tr>
+  <th>
+   <a name="Configuration%20Files">&nbsp;</a> 3.3 Configuration Files
+  </th>
+ </tr>
+ <tr>
+  <td>
+   BuzzSQL uses at most 2 configuration files as described below. Both configuration files are optional, depending on your
+   environment.
+  </td>
+ </tr>
+ <tr>
+  <th>
+   <a name="#BuzzSQL%20Properties">&nbsp;</a> 3.3 BuzzSQL Properties (<code>buzzsql.properties</code>)
+  </th>
+ </tr>
+ <tr>
+  <td>
+   This is an optional configuration file that allows you to change defaults of the core BuzzSQL library. Most likely you
+   will only need to provide this file if you are connecting to more than one database at the same time, or if you are
+   using a J2EE application server that does not bind it's JDBC resources under the JNDI context
+   <code>java:comp/env/jdbc/</code>.
+   <br>
+   <br>
+   This file is loaded as a system resource and therefore can be placed anywhere in your classpath. In a J2EE application
+   server environment the appropriate location is the <code>WEB-INF/classes</code> directory of your web
+   application.
+   <br>
+   <br>
+   <code>buzzsql.properties</code> may contain the following 3 configuration parameters;
+   <br>
+   <br>
+   <ul>
+    <li>
+     <code>rootNamespace</code>
+     <ul>
+      <li>
+       The root JNDI namespace to search for DataSources.
+      </li>
+      <li>
+       The stand-alone J2SE naming context will bind DataSources here, so you only need to specify this property if your J2EE
+       application server binds the DataSource resources at a location different than the default.
+      </li>
+      <li>
+       Default: <code>java:comp/env/jdbc</code>
+      </li>
+     </ul>
+    </li>
+    <li>
+     <code>dataSourceNames</code>
+     <ul>
+      <li>
+       Specific name(s) of DataSources for the library to use.
+      </li>
+      <li>
+       BuzzSQL normally performs an automatic DataSource discovery process by searching the full JNDI path under your 
+       <code>rootNamespace</code> for DataSource objects. If you specify this property, the search process 
+       will NOT occur and BuzzSQL will ONLY lookup the names listed here. All names are relative to the 
+       <code>rootNamespace</code> property.
+      </li>
+      <li>
+       You may list multiple DataSource names separated by commas.
+      </li>
+      <li>
+       Default: none
+      </li>
+     </ul>
+    </li>
+    <li>
+     <code>defaultDataSourceName</code>
+     <ul>
+      <li>
+       The default <code>dataSourceName</code> to use when there are multiple DataSources available.
+      </li>
+      <li>
+       If you are using more than one DataSource, you must either provide the <code>dataSourceName</code> in your 
+       code to specify which DataSource you are referring to, or define this property.
+      </li>
+      <li>
+       If you define the <code>dataSourceNames</code> parameter but not this parameter also, the default will be 
+       the first DataSource listed. In any other case of multiple DataSources, the default is non-deterministic.
+      </li>
+      <li>
+       Default: none
+      </li>
+     </ul>
+    </li>
+   </ul>
+  </td>
+ </tr>
+ <tr>
+  <th>
+   <a name="#Database%20Connection%20Configuration">&nbsp;</a> 3.3.2 Database Connection Configuration
+   (<code>buzzsql-datasources.xml</code>)
+  </th>
+ </tr>
+ <tr>
+  <td>
+   This file is used to setup an in-memory JNDI naming context to hold your database connections in a stand-alone J2SE
+   application environment. It is somewhat similar to a typical resource configuration for most J2EE application servers.
+   <br>
+   <br>
+   This file is usually not needed in a J2EE application server environment. J2EE application servers will setup the JNDI
+   naming context using on their own configuration files, so there is no need for this stand-alone configuration file.
+   <br>
+   <br>
+   This file is loaded as a system resource and therefore can be placed anywhere in your classpath.
+   <br>
+   <br>
+   Shiftone OOC provides a DataSource Factory implementation specifically for the c3p0 connection pool. Any pool that
+   provides an implementation of a <code>javax.naming.spi.ObjectFactory</code> should be usable.
+   <br>
+   <br>
+   An example <code>buzzsql-datasources.xml</a> follows:
+   <br>
+<pre>
+&lt;initial-context&gt;
+ &lt;context name="java:comp"&gt;
+  &lt;context name="env"&gt;
+   &lt;context name="jdbc"&gt;
+    &lt;reference name="mysql" classname="javax.sql.DataSource" 
+     factoryclassname="org.shiftone.ooc.factory.PooledDataSourceObjectFactory"&gt;
+     &lt;refaddr name="driver" value="com.mysql.jdbc.Driver"&gt;
+     &lt;refaddr name="url" value="jdbc:mysql://localhost:3306/example1"&gt;
+     &lt;refaddr name="user" value="root"&gt;
+     &lt;refaddr name="password" value="mysql"&gt;
+     &lt;refaddr name="c3p0.initialPoolSize" value="1"&gt;
+     &lt;refaddr name="c3p0.minPoolSize" value="1"&gt;
+     &lt;refaddr name="c3p0.acquireIncrement" value="1"&gt;
+     &lt;refaddr name="c3p0.acquireRetryAttempts" value="1"&gt;
+    &lt;/reference&gt;
+   &lt;/context&gt;
+  &lt;/context&gt;
+ &lt;/context&gt;
+&lt;/initial-context&gt;
+</pre>
+  </td>
+ </tr>
+ <tr>
+  <th>
+   <a name="BuzzSQL%20Logging">&nbsp;</a> 3.4 BuzzSQL Logging
+  </th>
+ </tr>
+ <tr>
+  <td>
+   All BuzzSQL logs are written using the Jakarta commons-logging package. However, since BuzzSQL is a "low-level"
+   library, it generates relatively little log output to any level other than DEBUG.
+  </td>
+ </tr>
+ <tr>
+  <th>
+   <a name="DEBUG%20Level">&nbsp;</a> 3.4.1 DEBUG Level
+  </th>
+ </tr>
+ <tr>
+  <td>
+   DataSource Manager will output detailed information on the initialization of DataSources.<br>
+   <br>
+   All SQL statements will be merged with their arguments and output in their raw format BEFORE the query is executed.
+   Note; you should NOT use DEBUG level if you are writing any sensitive data to the database using BuzzSQL, as it will be
+   written to the logs.
+  </td>
+ </tr>
+ <tr>
+  <th>
+   <a name="INFO%20Level">&nbsp;</a> 3.4.2 INFO Level
+  </th>
+ </tr>
+ <tr>
+  <td>
+   No output is written at the INFO log level.
+  </td>
+ </tr>
+ <tr>
+  <th>
+   <a name="WARN%20Level">&nbsp;</a> 3.4.3 WARN Level
+  </th>
+ </tr>
+ <tr>
+  <td>
+   DataSource Manager will generate warnings if it encounters any non-critical problems during initialization such as;
+   <br>
+   <ul>
+    <li>
+     Non-existent DataSources named by <code>dataSourceName</code> properties in 
+     <code>buzzsql.properties</code>.
+    </li>
+    <li>
+     A non-existent DataSource named by <code>defaultDataSourceName</code> property in 
+     <code>buzzsql.properties</code>.
+    </li>
+    <li>
+     Multiple DataSources loaded without a <code>defaultDataSourceName</code> property set.
+    </li>
+    <li>
+     No DataSources found.
+    </li>
+    <li>
+     A NULL DataSource bound to a JDNI name; usually indicating failed JDBC driver initialization.
+    </li>
+   </ul>
+  </td>
+ </tr>
+ <tr>
+  <th>
+   <a name="ERROR%20Level">&nbsp;</a> 3.4.4 ERROR Level
+  </th>
+ </tr>
+ <tr>
+  <td>
+   DataSource Manager will generate errors if it encounters any critical problems during initialization such as;
+   <br>
+   <ul>
+    <li>
+     Failure to load any JNDI initial naming context.
+    </li>
+    <li>
+     Failure to lookup the JNDI root namespace.
+    </li>
+   </ul>
+  </td>
+ </tr>
+ <tr>
+  <th>
+   <a name="FATAL%20Level">&nbsp;</a> 3.4.5 FATAL Level
+  </th>
+ </tr>
+ <tr>
+  <td>
+   DataSource Manager outputs a FATAL log if it fails to initialize due to any of the ERROR conditions listed above, or if
+   it catches any unexpected error during initialization.
+   <br>
+   <br>
+   You can query the initialization state of DataSource Manager by calling
+   <code>DataSouceManager.initializationFailed()</code>. initializationFailed will return
+   <code>true</code> if a FATAL error was detected.
+  </td>
+ </tr>
+ <tr>
+  <th>
+   <a name="3rd%20Party%20Library%20Logging">&nbsp;</a> 3.5 3rd Party Library Logging
+  </th>
+ </tr>
+ <tr>
+  <td>
+   Shiftone OOC, Arbor, and c3p0 are relatively verbose in terms of log output compared to BuzzSQL.
+   <br>
+   <ul>
+    <li>
+     OOC and Arbor will write extensive logs to DEBUG level while processing the <code>buzzsql-datasources.xml</code>
+     file.
+    </li>
+    <li>
+     OOC will write JDNI context setup information to the INFO level during initialization.
+    </li>
+    <li>
+     c3p0 will write extensive information to the DEBUG level during connection setup, and more terse status information to 
+     the INFO level.
+    </li>
+   </ul>
+   A sensible <code>log4j.properties</code> file is included as an example with BuzzSQL that will "tone down"
+   the logging in these 3rd party libraries.
+  </td>
+ </tr>
+ <tr>
+  <th>
+   <a name="Usage">&nbsp;</a> 4. Usage
+  </th>
+ </tr>
+ <tr>
+  <td>
+   &nbsp;
+  </td>
+ </tr>
+ <tr>
+  <th>
+   <a name="Constructors">&nbsp;</a> 4.1 Constructors
+  </th>
+ </tr>
+ <tr>
+  <td>
+   Four different constructors are provided for each object to handle the different cases of how a connection to the
+   database is obtained. See <a href="#Connecting%20to%20the%20Database">Connecting to the Database</a> for more
+   information on obtaining a connection to the database explicitly or automatically.
+   <br>
+   <ul>
+    <li>
+     A zero argument constructor is provided for simplified operation with JavBeans, SOAP, and reflection scenarios where
+     having such a constructor is necessary or convenient. At a minimum, you must call
+     <code>setSQL(String)</code> before execution when using this constructor.
+    </li>
+    <li>
+     A single argument constructor that accepts your SQL statement and uses the default DataSource.
+    </li>
+    <li>
+     A dual argument constructor that accepts your SQL statement and the explicit name of a DataSource to use.
+    </li>
+    <li>
+     A dual argument constructor that accepts your SQL statement and a <code>java.sql.Connection</code> object.
+     This constructor provides a great deal of flexibility by allowing the use of "explicit" connections that are supplied
+     by the user rather than being obtained automatically by BuzzSQL. Using a explicit connection also allows BuzzSQL to
+     support database transactions.
+    </li>
+   </ul>
+  </td>
+ </tr>
+ <tr>
+  <th>
+   <a name="SQL%20and%20Arguments">&nbsp;</a> 4.2 SQL and Arguments
+  </th>
+ </tr>
+ <tr>
+  <td>
+   All BuzzSQL objects use an internal <code>java.sql.PreparedStatement</code> object that expects argument
+   placeholders in the SQL as question marks (?). The SQL statement can be passed in via constructor or using the
+   <code>setSQL(String)</code> method.
+   <br>
+   <br>
+   Arguments are set using the <code>setArgs(Object...)</code> or
+   <code>addArgs(Object...)</code> methods, which are Java 5 variable arguments methods. Therefore you can
+   call <code>setArgs(Object...)</code> and pass any type of object or primitive in any combination. The
+   order of your arguments must only match the order of your question marks in the SQL statement. The difference between
+   setArgs and addArgs is that setArgs will first clear an previously set values.
+   <br>
+   <br>
+   BuzzSQL does not handle quoting or escaping of any arguments; the decision to quote or not to quote is left up the JDBC
+   driver. Therefore it is important to pass your arguments in <code>setArgs(Object...)</code> as the
+   appropriate native Java type.
+   <br>
+   <br>
+   For example;
+   <br>
+   <ul>
+    <li>
+     <code>byte, short, int, long</code> if the database type is numeric
+    </li>
+    <li>
+     <code>float, double</code> if the database type is numeric with precision
+    </li>
+    <li>
+     <code>String, char</code> if the database type is varchar based
+    </li>
+    <li>
+     <code>java.util.Date, java.util.Calendar</code> if the database type is a date/time based
+    </li>
+    <li>
+     <code>com.buzzsurf.sql.OutParameter, com.buzzsurf.sql.InOutParameter</code> if the database type is a
+     stored procedure OUT or INOUT parameter. See <a href="#Stored%20Procedure">Stored Procedure</a> for more information.
+    </li>
+   </ul>
+  </td>
+ </tr>
+ <tr>
+  <th>
+   <a name="Execution">&nbsp;</a> 4.3 Execution
+  </th>
+ </tr>
+ <tr>
+  <td>
+   During execution a database connection is obtained (if needed), SQL and arguments are merged, and the PreparedStatement
+   is executed against the database. <code>execute()</code> throws an exception if any of these steps fails
+   for any reason.
+   <br>
+   <br>
+   Typical post-execution steps are slightly different depending on the object subtype. Select based objects will obtain a
+   <code>ResultSet</code> and <code>ResultSetMetaData</code>, while Update based objects will
+   query and save the updated row count to a local variable.
+   <br>
+   <br>
+   <code>execute()</code> returns a reference to the current object to support method chaining. See
+   <a href="#Method%20Chaining">Method Chaining</a> for more information. You can assume execution succeeded if no exception is thrown.
+  </td>
+ </tr>
+ <tr>
+  <th>
+   <a name="Closing%20the%20Object">&nbsp;</a> 4.4 Closing the Object
+  </th>
+ </tr>
+ <tr>
+  <td>
+   It is import to call <code>close()</code> after you have finished using any BuzzSQL object.
+   <code>close()</code> will release any resources including the database connection if appropriate. It will
+   never throw an exception, so it is always safe to call <code>close()</code>.
+   <br>
+   <br>
+   You may reuse a SQL object after calling <code>close()</code>.
+   <br>
+   <br>
+   The best practice to insure all BuzzSQL objects are closed is to put your call to <code>close()</code> in
+   a finally block, as demonstrated in the following code fragment;
+   <br>
+<pre>
+Update myUpdate = null;
+try
+{
+ myUpdate = new Update(sql);
+ myUpdate.setArgs(args);
+ myUpdate.execute();
+}
+catch(Exception e)
+{
+ // handle the exception
+}
+finally
+{
+ if(myUpdate != null)
+  myUpdate.close()
+}
+</pre>
+  </td>
+ </tr>
+ <tr>
+  <th>
+   <a name="SQL%20Objects">&nbsp;</a> 4.5 SQL Objects
+  </th>
+ </tr>
+ <tr>
+  <td>
+   Every SQL object in BuzzSQL extends from the base class <code>com.buzzsurf.sql.BuzzSQL</code>, and
+   therefore all operate in a very similar way as described below.
+  </td>
+ </tr>
+ <tr>
+  <th>
+   <a name="Select">&nbsp;</a> 4.5.1 Select (<code>com.buzzsurf.sql.Select</code>)
+  </th>
+ </tr>
+ <tr>
+  <td>
+   A Select object queries a database and can be iterated through to read results. It is a combination of the underlying
+   JDBC classes;
+   <ul>
+    <li>
+     <code>java.sql.Connection</code>
+    </li>
+    <li>
+     <code>java.sql.PreparedStatement</code>
+    </li>
+    <li>
+     <code>java.sql.ResultSet</code>
+    </li>
+    <li>
+     <code>java.sql.ResultSetMetaData</code>
+    </li>
+   </ul>
+   After execution, you may iterate through the <code>Select</code> object using
+   <code>next()</code>, and retrieve your results in any format using one of the variety of
+   <code>get</code> methods. You must call <code>next()</code> at least once before any
+   <code>get</code> call to set the index in the result set to the first result.
+   <br>
+   <br>
+   As an example, the following code fragment creates a <code>Select</code> object using the automatic
+   default connection to the database. The SQL statement is passed via constructor, and the arguments are passed using the
+   <code>setArgs(Object...)</code> method. <code>execute()</code> is called to execute the
+   database call, and then results are iterated through using <code>next()</code>. The object is then closed
+   to cleanup any resources and return the connection to the pool.
+   <br>
+<pre>
+Select select = new Select();
+select.setSQL("select col_pk, col_str, col_int from example.table_example1");
+select.execute();
+while (select.next())
+ System.out.println(select.getLine());
+select.close();
+</pre>
+   Note: This code does not handle exceptions. You normally should wrap your calls in try/catch/finally blocks to handle
+   any problems. It is advisable to put your <code>close()</code> call in a finally block to insure the
+   connection is always released.
+  </td>
+ </tr>
+ <tr>
+  <th>
+   <a name="Update">&nbsp;</a> 4.5.2 Update (<code>com.buzzsurf.sql.Update</code>)
+  </th>
+ </tr>
+ <tr>
+  <td>
+   An Update object modifies rows in a database and queries the number of rows updated. It is a combination of the
+   underlying JDBC classes;
+   <ul>
+    <li>
+     <code>java.sql.Connection</code>
+    </li>
+    <li>
+     <code>java.sql.PreparedStatement</code>
+    </li>
+   </ul>
+   After execution, you may get the number of rows updated by calling <code>getUpdateCount()</code> or
+   <code>getRowCount()</code>.
+   <br>
+   <br>
+   As an example, the following code fragment creates an <code>Update</code> object using the automatic
+   default connection to the database. The SQL statement is passed via constructor, and the arguments are passed using the
+   <code>setArgs(Object...)</code> method. <code>execute()</code> is called to execute the
+   database call, and then the update count is queries by calling <code>getUpdateCount()</code>. The object
+   is then closed to cleanup any resources and return the connection to the pool.
+   <br>
+<pre>
+Update update = new Update();
+update.setSQL("update example.table_example1 set col_str = ? where col_pk = ?");
+update.setArgs("asdf",1);
+update.execute();
+int updateCount = update.getUpdateCount();
+update.close();
+</pre>
+   Note: This code does not handle exceptions. You normally should wrap your calls in try/catch/finally blocks to handle
+   any problems. It is advisable to put your <code>close()</code> call in a finally block to insure the
+   connection is always released.
+  </td>
+ </tr>
+ <tr>
+  <th>
+   <a name="Insert">&nbsp;</a> 4.5.3 Insert (<code>com.buzzsurf.sql.Insert</code>)
+  </th>
+ </tr>
+ <tr>
+  <td>
+   An Insert object inserts new rows to a table and queries the number of rows inserted. It is a combination of the
+   underlying JDBC classes;
+   <ul>
+    <li>
+     <code>java.sql.Connection</code>
+    </li>
+    <li>
+     <code>java.sql.PreparedStatement</code>
+    </li>
+   </ul>
+   After execution, you may get the number of rows inserted by calling <code>getInsertCount()</code> or
+   <code>getRowCount()</code>.
+   <br>
+   <br>
+   If the database table contains an auto increment column, the value can be retrieved using
+   <code>getGeneratedKey()</code>. This method allows the retrieval of only the first auto increment column
+   in the table, and only as an <code>int</code>. BuzzSQL always allows access to the underlying base JDBC
+   object if you need more control, such as to retrieve other auto increment column values.
+   <br>
+   <br>
+   <code>com.buzzsurf.sql.Insert extends com.buzzsurf.sql.Update</code>, but add only minor functionality
+   beyond that which is contained in the parent class; <code>getGeneratedKey()</code> being the primary
+   addition. Therefore you may choose to use <code>com.buzzsurf.sql.Update</code> to perform inserts if it
+   helps to streamline your object structure.
+   <br>
+   <br>
+   As an example, the following code fragment creates an <code>Insert</code> object using the automatic
+   default connection to the database. The SQL statement is passed via constructor, and the arguments are passed using the
+   <code>setArgs(Object...)</code> method. <code>execute()</code> is called to execute the
+   database call, and then the primary key column value is retrieved using <code>getGeneratedKey()</code>.
+   The object is then closed to cleanup any resources and return the connection to the pool.
+   <br>
+<pre>
+Insert insert = new Insert("insert into example.table_example1(col_str, col_int) values (?,?)")
+insert.setArgs("asdf", 123);
+insert.execute();
+int pk = insert.getGeneratedKey();
+System.out.println(pk);
+insert.close();
+</pre>
+   Note: This code does not handle exceptions. You normally should wrap your calls in try/catch/finally blocks to handle
+   any problems. It is advisable to put your <code>close()</code> call in a finally block to insure the
+   connection is always released.
+  </td>
+ </tr>
+ <tr>
+  <th>
+   <a name="Delete">&nbsp;</a> 4.5.4 Delete (<code>com.buzzsurf.sql.Delete</code>)
+  </th>
+ </tr>
+ <tr>
+  <td>
+   An Delete object deletes rows from a database table and queries the number of rows deleted. It is a combination of the
+   underlying JDBC classes;
+   <ul>
+    <li>
+     <code>java.sql.Connection</code>
+    </li>
+    <li>
+     <code>java.sql.PreparedStatement</code>
+    </li>
+   </ul>
+   After execution, you may get the number of rows deleted by calling <code>getDeleteCount()</code> or
+   <code>getRowCount()</code>.
+   <br>
+   <br>
+   <code>com.buzzsurf.sql.Delete extends com.buzzsurf.sql.Update</code>, but add only minor functionality
+   beyond that which is contained in the parent class. Therefore you may choose to use
+   <code>com.buzzsurf.sql.Update</code> to perform deletes if it helps to streamline your object structure.
+   <br>
+   <br>
+   As an example, the following code fragment creates an <code>Delete</code> object using the automatic
+   default connection to the database. The SQL statement is passed via constructor, and the arguments are passed using the
+   <code>setArgs(Object...)</code> method. <code>execute()</code> is called to execute the
+   database call, and then the delete count is queries by calling <code>getDeleteCount()</code>. The object
+   is then closed to cleanup any resources and return the connection to the pool.
+   <br>
+<pre>
+Delete delete = new Delete();
+delete.setSQL("delete from example.table_example1 where col_int = ?");
+delete.setArgs(123);
+delete.execute();
+int deleteCount = update.getDeleteCount();
+delete.close();
+</pre>
+   Note: This code does not handle exceptions. You normally should wrap your calls in try/catch/finally blocks to handle
+   any problems. It is advisable to put your <code>close()</code> call in a finally block to insure the
+   connection is always released.
+  </td>
+ </tr>
+ <tr>
+  <th>
+   <a name="Stored%20Procedure">&nbsp;</a> 4.5.5 Stored Procedure
+   (<code>com.buzzsurf.sql.StoredProcedure</code>)
+  </th>
+ </tr>
+ <tr>
+  <td>
+   A StoredProcedure object executes a stored program in a relational database. A StoredProcedure is similar to a Select
+   object, as it can have a result set. It is also similar to an Update object, as it can have an update count. It is a
+   combination of the underlying JDBC classes;
+   <ul>
+    <li>
+     <code>java.sql.Connection</code>
+    </li>
+    <li>
+     <code>java.sql.PreparedStatement</code>
+    </li>
+    <li>
+     <code>java.sql.ResultSet</code>
+    </li>
+    <li>
+     <code>java.sql.ResultSetMetaData</code>
+    </li>
+   </ul>
+   After execution, you may call <code>hasResultSet()</code> to find out of the StoredProcedure produced a
+   result set. If it has a result set, you may iterate through the <code>StoredProcedure</code> object using
+   <code>next()</code>, and retrieve your results in any format using one of the variety of
+   <code>get</code> methods. You must call <code>next()</code> at least once before any
+   <code>get</code> call to set the index in the result set to the first result. You may also get the number
+   of rows updated by calling <code>getUpdateCount()</code> or <code>getRowCount()</code>.
+   <br>
+   <br>
+   Some databases allow a stored procedure to return results in the form of OUT or INOUT parameters. BuzzSQL supports this
+   through the use of the <code>com.buzzsurf.sql.OutParameter</code> and
+   <code>com.buzzsurf.sql.InOutParameter</code> objects. For more detailed information see the sections on
+   <a href="#OutParameter">OutParameter</a> and <a href="#InOutParameter">InOutParameter</a> objects.
+   <br>
+   <br>
+   As an example, the following code fragment creates a <code>StoredProcedure</code> object using the
+   automatic default connection to the database. The SQL statement is passed via constructor, and the arguments are passed
+   using the <code>setArgs(Object...)</code> method. This example makes use of an
+   OutParameter and an InOutParameter to demonstrate the usage of
+   these classes. OUT and INOUT parameters are used only in conjunction with stored procedures.
+   <code>execute()</code> is called to execute the database call, and then results are iterated through using
+   <code>next()</code>. The object is then closed to cleanup any resources and return the connection to the pool.
+   <br>
+<pre>
+OutParameter outParam = new OutParameter(java.sql.Types.VARCHAR);
+InOutParameter inOutParam = new InOutParameter(java.sql.Types.INTEGER, 10);
+StoredProcedure storedProc = new StoredProcedure("call test.storedproc_test(?, ?, ?)");
+storedProc.setArgs("asdf", outParam, inOutParam);
+storedProc.execute();
+if (storedProc.hasResultSet())
+{
+ while (storedProc.next())
+  System.out.println(storedProc.getLine());
+}
+System.out.println(outParam.getString());
+System.out.println(inOutParam.getInt());
+storedProc.close();
+</pre>
+   Note: This code does not handle exceptions. You normally should wrap your calls in try/catch/finally blocks to handle
+   any problems. It is advisable to put your <code>close()</code> call in a finally block to insure the
+   connection is always released.
+  </td>
+ </tr>
+ <tr>
+  <th>
+   <a name="OutParameter">&nbsp;</a> 4.5.5.1 OutParameter (<code>com.buzzsurf.sql.OutParameter</code>)
+  </th>
+ </tr>
+ <tr>
+  <td>
+   OutParameter is a wrapper object used in conjunction with a StoredProcedure object to allow the return of a value from
+   a stored procedure. OutParamer acts like a place holder in your SQL statement. You should create an OutParameter
+   object, and then bind it to the StoredProcedure at the appropriate ? place holder like any other bind variable.
+   <br>
+   <br>
+   Since OutParameter is a wrapper around another object type, you are required to tell BuzzSQL what type of object it is
+   wrapping. This is done in the constructor by passing an <code>int</code> value representing a SQL type as
+   defined in <code>java.sql.Types</code> class. A partial list containing the most commonly used values follows;
+   <br>
+   <ul>
+    <li>
+     <code>java.sql.Types.DATE</code>
+    </li>
+    <li>
+     <code>java.sql.Types.INTEGER</code>
+    </li>
+    <li>
+     <code>java.sql.Types.DECIMAL</code>
+    </li>
+    <li>
+     <code>java.sql.Types.VARCHAR</code>
+    </li>
+   </ul>
+   Prior to execution, the OutParameter is an empty wrapper; the internal value is null. However, during execution of a
+   StoredProcedure, BuzzSQL will look for any bound OutParameter objects and populate their value.
+   <br>
+   <br>
+   After execution, the value returned from the StoredProcedure can be retrieved in any format using one of the variety of
+   <code>get</code> methods, similar to getting values from a Select object. You should take care however to
+   retrieve the value as the same <code>java.sql.Types</code> value you specified for the object. For
+   example, <code>getInt()</code> for a <code>java.sql.Types.INTEGER</code> or
+   <code>getString()</code> for a <code>java.sql.Types.VARCHAR</code>.
+   <br>
+   <br>
+   See <a href="#Stored%20Procedure">Stored Procedure</a> for example code.
+  </td>
+ </tr>
+ <tr>
+  <th>
+   <a name="InOutParameter">&nbsp;</a> 4.5.5.2 InOutParameter (<code>com.buzzsurf.sql.InOutParameter</code>)
+  </th>
+ </tr>
+ <tr>
+  <td>
+   InOutParameter is a wrapper object used in conjunction with a StoredProcedure object to allow the a value to be passed
+   to a stored procedure, and to allow the return of a value from the stored procedure.
+   <br>
+   <br>
+   InOutParameter extends OutParameter, and therefore inherits all it's methods. It function the same way with regard to
+   returning a value from a StoreProcedure. However InOutParameter also allows you to pass a value to the stored procedure.
+   <br>
+   <br>
+   During execution, BuzzSQL will bind your "in" value to the SQL statement. After execution, it will retrieve the out
+   value. See <a href="#OutParameter">OutParameter</a> more information regarding retrieving values from an OutParameter
+   object.
+  </td>
+ </tr>
+ <tr>
+  <th>
+   <a name="Connecting%20to%20the%20Database">&nbsp;</a> 5. Connecting to the Database
+  </th>
+ </tr>
+ <tr>
+  <td>
+   BuzzSQL is particularly flexible in regards to connecting to a database. Specifically, BuzzSQL has the ability to
+   obtain a connection in a stand-alone J2SE environment, in an J2EE application server environment, or to operate using a
+   user supplied connection. The first 2 cases are related to DataSource Manager, as discussed below. The later is
+   referred to as a "explicit" connection, and explained in detail below.
+  </td>
+ </tr>
+ <tr>
+  <th>
+   <a name="DataSource%20Manager">&nbsp;</a> 5.1 DataSource Manager
+   (<code>com.buzzsurf.sql.DataSourceManager</code>)
+  </th>
+ </tr>
+ <tr>
+  <td>
+   DataSource Manager handles loading <code>javax.sql.DataSource</code> objects from a JNDI naming context.
+   This is done intelligently by examining any existing naming context. All database connections obtained automatically by
+   BuzzSQL come from DataSource bound in a JNDI naming context
+   <br>
+   <br>
+   Note: DataSource Manager does not need to be used exclusively with BuzzSQL objects. It can be
+   a valuable stand-alone tool for obtaining database connections. This is particularly true in a J2SE environment where
+   no JNDI naming context is available. DataSource Manager will create a naming context for you and load and bind your
+   dataSources conveniently.
+  </td>
+ </tr>
+ <tr>
+  <th>
+   <a name="Modes%20of%20Operation">&nbsp;</a> 5.1.1 Modes of Operation
+  </th>
+ </tr>
+ <tr>
+  <td>
+   DataSource Manager can operate in 2 modes; "J2EE" or "J2SE".
+  </td>
+ </tr>
+ <tr>
+  <th>
+   <a name="J2EE%20-%20Application%20Server%20Mode">&nbsp;</a> 5.1.1.1 J2EE - Application Server Mode
+  </th>
+ </tr>
+ <tr>
+  <td>
+   In J2EE mode, a JNDI naming context already exists. This is usually the case when your application is running in a J2EE
+   Application Server or Servlet Container. In J2EE mode, DataSource Manager expects that your database connections have
+   already been configured by your J2EE application server and bound in the naming context. No BuzzSQL specific
+   configuration files are required to use BuzzSQL in J2EE mode. DataSource Manager will examine your JNDI naming context
+   looking for dataSources and make them available for use in BuzzSQL.
+  </td>
+ </tr>
+ <tr>
+  <th>
+   <a name="J2SE%20-%20Stand-alone%20Mode">&nbsp;</a> 5.1.1.2 J2SE - Stand-alone Mode
+  </th>
+ </tr>
+ <tr>
+  <td>
+   In J2SE mode, no JNDI naming context exists. This is normally the case when you are running a stand-alone Java
+   application outside of a J2EE Application Server or Servlet Container. In J2SE mode, DataSource Manager will load it's
+   own JNDI naming context and create and bind dataSources as configured in your <code>buzzsql-datasources.xml</code>
+   file. In J2SE mode, <code>buzzsql-datasources.xml</code> is the only required configuration file. See
+   <a href="#Database%20Connection%20Configuration">Database Connection Configuration</a> for more information on
+   configuring your JNDI naming context and dataSource connection properties via <code>buzzsql-datasources.xml</code>.
+  </td>
+ </tr>
+ <tr>
+  <th>
+   <a name="Initialization">&nbsp;</a> 5.1.2 Initialization
+  </th>
+ </tr>
+ <tr>
+  <td>
+   DataSource Manager goes through an intelligent discovery process to search for and load dataSources bound in the JNDI
+   naming context. The default root namespace it expects dataSources to be bound in is
+   <code>java:comp/env/jdbc/</code>. You can change this path and a number of other configuration properties
+   by including <code>buzzsql.properties</code> in the classpath.
+   <br>
+   <br>
+   In either mode, DataSource Manager will load the optional configuration file
+   <code>buzzsql.properties</code> during initialization if it exists in the classpath.
+   <code>buzzsql.properties</code> is not required unless you need to change some default behavior regarding
+   dataSource lookups. See <a href="#BuzzSQL%20Properties">BuzzSQL Properties</a> for more information on the parameters
+   you may set using <code>buzzsql.properties</code>.
+   <br>
+   <br>
+   <span class="emph">Note:</span> DataSource Manager uses "lazy initialization" to create/lookup/load dataSource from the
+   JNDI naming context. This can caused a problem in some cases, as the first request may be delayed as resources are
+   loaded. To prevent this, a single simple call to the static method
+   <code>DataSourceManager.initialize()</code> will result in pre-loading of all dataSources. You can query
+   DataSource Manager on the status of initialization using the
+   <code>DataSourceManager.isInitialized()</code> and <code>DataSourceManager.initializationFailed()</code>
+   methods. These methods allow your application is determine if DataSource Manager is correctly initialized. All errors
+   during initialization will be written to the common logging system. See <a href="#BuzzSQL%20Logging">BuzzSQL Logging</a> for more
+   information on DataSource Manager logging.
+  </td>
+ </tr>
+ <tr>
+  <th>
+   <a name="DataSource%20Naming">&nbsp;</a> 5.1.3 DataSource Naming
+  </th>
+ </tr>
+ <tr>
+  <td>
+   DataSources are made available to BuzzSQL using a name that is based on the JNDI path. For example, a dataSource bound
+   in your JNDI naming context at <code>java:comp/env/jdbc/testDB</code> would be named
+   <code>testDB</code>, since <code>java:comp/env/jdbc/</code> is the default root namespace search path.
+   <br>
+   <br>
+   All dataSources found under the root namespace are made available in DataSource Manager. This can create a problem if
+   you have multiple dataSource bound in JNDI; the default dataSource is non-deterministic when there are multiple
+   dataSources available. To fix this problem, you must either always specify a <code>dataSourceName</code>
+   in the constructor of your BuzzSQL objects, call <code>setDataSourceName(String)</code> on your BuzzSQL
+   objects, or include the <code>buzzsql.properties</code> file with the
+   <code>defaultDataSourceName</code> property.
+   <br>
+   <br>
+   Example DataSource specification:<br>
+<pre>
+// DataSource bound in JNDI at java:comp/env/jdbc/testDB
+Select select = new Select(sql, "testDB");
+</pre>
+   Or...
+<pre>
+// DataSource bound in JNDI at java:comp/env/jdbc/testDB
+Select select = new Select(sql);
+select.setDataSourceName("testDB");
+</pre>
+  </td>
+ </tr>
+ <tr>
+  <th>
+   <a name="Connection%20Pooling">&nbsp;</a> 5.2 Connection Pooling
+  </th>
+ </tr>
+ <tr>
+  <td>
+   BuzzSQL does not explicitly handle any type of database connection pooling. Connection pooling is the responsibility of
+   the DataSource, or the factory class that is specified in your JNDI naming context. In a stand-alone J2SE environment,
+   the default Shiftone OOC JNDI naming context will use by default the c3p0 database connection pool. See 
+   <a href="#Installation">Installation</a> for more information on Shiftone OOC JNDI and c3p0.
+   <br>
+   <br>
+   In a J2EE environment, your application server will usually provide transparent built-in connection pooling via 
+   JNDI bound dataSources.
+  </td>
+ </tr>
+ <tr>
+  <th>
+   <a name="Miscellaneous%20Topics">&nbsp;</a> 6. Miscellaneous Topics
+  </th>
+ </tr>
+ <tr>
+  <td>
+   &nbsp;
+  </td>
+ </tr>
+ <tr>
+  <th>
+   <a name="Explicit%20Connections">&nbsp;</a> 6.1 Explicit Connections
+  </th>
+ </tr>
+ <tr>
+  <td>
+   Explicit connections are an advanced feature of BuzzSQL that allows for greater flexibility in regards to opening and
+   closing your database connection.
+   <br>
+   <br>
+   In normal use, BuzzSQL automatically accesses DataSource Manager to get a database connection when
+   <code>execute</code> is called, and automatically releases this connection when
+   <code>close()</code> is called. In contrast, an explicit connection is passed to the SQL object in the
+   constructor, or using the <code>setConnection(Connection con)</code> method. BuzzSQL will not
+   automatically commit or close an explicit connection. This allows the developer a greater amount of control to set
+   connection specific parameters or use transactions. See <a href="#Transactions">Transactions</a> for more information 
+   on using transactions in BuzzSQL.
+   <br>
+   <br>
+   You can query the type of connection a SQL object is using by calling
+   <code>usingExplicitConnection()</code>. <code>usingExplicitConnection()</code> will return
+   true if you pass a <code>java.sql.Connection</code> in via the constructor, or call
+   <code>setConnection(Connection con)</code> with a non-null <code>java.sql.Connection</code>
+   object. You can reset the BuzzSQL object's state to use an automatic connections by passing null to
+   <code>setConnection(Connection con)</code>.
+   <br>
+   <br>
+   The explicit <code>java.sql.Connection</code> can come from any source such as an external connection
+   pool, a JNDI lookup, or BuzzSQL's DataSource Manager. It is common for an application to use BuzzSQL's automatic
+   connection handling for 99% of the database access, but need to wrap a few specific calls in a transaction. In this
+   case you can call <code>DataSourceManager.getConnection()</code> to obtain an explicit connection for the
+   calls that need to be executed in a transaction, and allow BuzzSQL to use automatic connection handling for the rest.
+   <br>
+   <br>
+   Note: BuzzSQL's SQL objects can be used entirely with external connection with no ill effect by always setting an 
+   explicit connection from an external pool. In this case, DataSource Manager will never be initialized and the 
+   configuration files will not be read. In this way you can use BuzzSQL without the need of any configuration files.
+  </td>
+ </tr>
+ <tr>
+  <th>
+   <a name="Transactions">&nbsp;</a> 6.2 Transactions
+  </th>
+ </tr>
+ <tr>
+  <td>
+   As BuzzSQL's major design goal is to simplify JDBC, it does not explicitly provide support for database transactions.
+   However, since BuzzSQL is also very flexible, you can still use transaction by utilizing BuzzSQL's explicit connection
+   feature. See <a href="#Explicit%20Connections">Explicit Connections</a> for more information on External Connections.
+   <br>
+   <br>
+   The following code fragment demonstrates how to properly enclose updates inside a transaction.
+   <br>
+<pre>
+Connection con = DataSourceManager.getConnection();
+con.setAutoCommit(false);
+
+Update update3 = null;
+Update update4 = null;
+boolean tranSuccess = true;
+
+try
+{
+ update3 = new Update("update example1.table_example1 set col_str = ? where col_int = ?", con);
+ update3.setArgs("tran", 234);
+ update3.execute();
+
+ update4 = new Update("update example1.table_example1 set col_str = ? where col_int = ?", con);
+ update4.setArgs("tran", 234);
+ update4.execute();
+}
+catch(Exception e)
+{
+ tranSuccess = false;
+ e.printStackTrace();
+}
+finally
+{
+ if(update3 != null)
+   update3.close();
+
+ if(update4 != null)
+  update4.close();
+
+ try
+ {
+  if(tranSuccess)
+   con.commit();
+  else
+   con.rollback();
+ }
+ catch(Exception e2)
+ {
+  e2.printStackTrace();
+ }
+
+ con.setAutoCommit(true);
+ DataSourceManager.releaseConnection(con);
+}
+</pre>
+  </td>
+ </tr>
+ <tr>
+  <th>
+   <a name="Method%20Chaining">&nbsp;</a> 6.3 Method Chaining
+  </th>
+ </tr>
+ <tr>
+  <td>
+   Method chaining is a style of coding in which methods that would normally return <code>void</code> instead
+   return a reference to the object itself. This allows another method to immediately be called on the the same line of
+   code; thus effectively chaining the method calls together.
+   <br>
+   <br>
+   Using method chaining is entirely optional and a matter of personal preference. The author of BuzzSQL finds that method
+   chaining is ideally suited for the types of projects BuzzSQL is targeted towards. Method chaining can reduce the size
+   of your code, make it more readable (in most cases), and reduce the number of temporary object references.
+   <br>
+   <br>
+   The concept is best described via an example of 2 fragments of code that produce the same results. This first fragment
+   does not use method chaining;
+   <br>
+<pre>
+Update update = new Update(sqlStr);
+update2.setArgs(s,i);
+update2.execute();
+update2.close();
+</pre>
+   This fragment employs method chaining;
+   <br>
+<pre>
+Update update = new Update(sqlStr).setArgs(s,i).execute().close();
+</pre>
+   The latter example can be further optimized by removing the likely unneeded variable "update" as follows:
+   <br>
+<pre>
+new Update(sqlStr).setArgs(s,i).execute().close();
+</pre>
+  </td>
+ </tr>
+ <tr>
+  <th>
+   <a name="Thread%20Safety">&nbsp;</a> 6.4 Thread Safety
+  </th>
+ </tr>
+ <tr>
+  <td>
+   BuzzSQL's SQL objects (Select, Insert, Update, Delete, StoredProcedure) are not thread safe and should not be used by
+   multiple threads at the same time.
+   <br>
+   <br>
+   DataSource Manager's methods are all synchronized, and it is therefore safe to use from multiple threads at the same
+   time.
+  </td>
+ </tr>
+ <tr>
+  <th>
+   <a name="Release%20Information">&nbsp;</a> 6.5 Release Information
+   (<code>com.buzzsurf.sql.ReleaseInfo</code>)
+  </th>
+ </tr>
+ <tr>
+  <td>
+   BuzzSQL includes a handy class which contains information on the version of BuzzSQL you are currently using. Using this
+   class, you can query information such as product name, version, build number, and release date. An instance of the
+   <code>ReleaseInfo</code> is obtained by calling <code>BuzzSQL.getReleaseInfo()</code>, as
+   demonstrated in the following code fragment;
+<pre>
+ReleaseInfo releaseInfo = BuzzSQL.getReleaseInfo();
+System.out.println(releaseInfo.getWelcome());
+System.out.println(releaseInfo.getVersionString());
+System.out.println(releaseInfo.getProductName());
+System.out.println(releaseInfo.getLicenseInfo());
+System.out.println(releaseInfo.getReleaseDate());
+System.out.println(releaseInfo.getWebsiteString());
+System.out.println(releaseInfo.getMajorVersion());
+System.out.println(releaseInfo.getMinorVersion());
+System.out.println(releaseInfo.getBuildNumber());
+</pre>
+  </td>
+ </tr>
+ <tr>
+  <th>
+   <a name="JavaDoc%20-%20API%20Documentation">&nbsp;</a> 7. JavaDoc - API Documentation
+  </th>
+ </tr>
+ <tr>
+  <td>
+   Full JavaDoc generated API documentation is included with both the pre-built and source code releases of BuzzSQL in the
+   <a href="http://www.buzzsurf.com/sql/javadoc">/javadoc</a> directory.
+  </td>
+ </tr>
+ <tr>
+  <th>
+   <a name="Contacting%20the%20Author">&nbsp;</a> 8. Contacting the Author
+  </th>
+ </tr>
+ <tr>
+  <td>
+   BuzzSQL was written by Paul Cowan, a professional Java developer that resides in the area of Philadelphia, PA, USA.
+   <br>
+   <ul>
+    <li>
+     Web: <a href="http://www.buzzsurf.com/sql">http://www.buzzsurf.com/sql</a>
+    </li>
+    <li>
+     Email: <a href="mailto:pwc21@yahoo.com">pwc21@yahoo.com</a>
+    </li>
+    <li>
+     AIM: umakemyheadhurt
+    </li>
+   </ul>
+  </td>
+ </tr>
+ <tr>
+  <th>
+   <a name="License">&nbsp;</a> 9. License
+  </th>
+ </tr>
+ <tr>
+  <td>
+   BuzzSQL is released under terms of the GNU Lesser General Public License. See <a href="LICENSE.txt">LICENSE.txt</a> for
+   more information. The GNU Lesser General Public License can be found in the included file <a href="LGPL.txt">LGPL.txt</a> .
+  </td>
+ </tr>
+ <tr>
+  <th>
+   <a name="Change%20Log">&nbsp;</a> 10. Change Log
+  </th>
+ </tr>
+ <tr>
+  <td>
+   <ul>
+    <li>
+     1.3.8 - 11/04/2007
+     <br>
+     <ul>
+      <li>
+       Initial Release
+      </li>
+     </ul>
+    </li>
+   </ul>
+  </td>
+ </tr>
+</table>
+
+</center>
+</div>
+</body>
+</html>
