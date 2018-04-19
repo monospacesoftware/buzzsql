@@ -25,3 +25,5 @@ BuzzSQL is licensed under the LGPL 2.0.
 + [Download](https://github.com/monospacesoftware/buzzsql/raw/master/archive/buzzsql-1.3.8.zip)
 + [User Guide](https://htmlpreview.github.io/?https://raw.githubusercontent.com/monospacesoftware/buzzsql/master/doc/userguide.html)
 + [Examples](https://github.com/monospacesoftware/buzzsql/tree/master/example)
+
+
